@@ -1,0 +1,141 @@
+.embed-showcase {
+  display: grid;
+  gap: 28px;
+  padding-top: 12px;
+}
+
+.showcase-copy {
+  display: grid;
+  gap: 14px;
+  max-width: 68ch;
+}
+
+.showcase-copy h2 {
+  max-width: 12ch;
+}
+
+.embed-project-tag {
+  margin: 0;
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.projects-stack {
+  display: grid;
+  gap: 28px;
+}
+
+.project-card {
+  width: 100%;
+  display: grid;
+  gap: 24px;
+  padding: 28px;
+  border: 1px solid rgba(21, 21, 21, 0.09);
+  border-radius: 32px;
+  background: var(--surface);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease;
+}
+
+.project-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 90, 31, 0.16);
+  box-shadow:
+    0 30px 80px rgba(26, 19, 14, 0.11),
+    0 12px 32px rgba(26, 19, 14, 0.08);
+}
+
+.project-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 20px;
+}
+
+.project-card-copy {
+  display: grid;
+  gap: 14px;
+  max-width: 62ch;
+}
+
+.embed-frame-shell {
+  overflow: hidden;
+  border: 1px solid rgba(21, 21, 21, 0.08);
+  border-radius: 28px;
+  background: #f4efe7;
+  box-shadow:
+    0 26px 70px rgba(26, 19, 14, 0.08),
+    0 10px 28px rgba(26, 19, 14, 0.06);
+  transition:
+    box-shadow 180ms ease,
+    border-color 180ms ease;
+}
+
+.project-card:hover .embed-frame-shell {
+  border-color: rgba(255, 90, 31, 0.18);
+  box-shadow:
+    0 30px 80px rgba(26, 19, 14, 0.11),
+    0 12px 32px rgba(26, 19, 14, 0.08);
+}
+
+.embed-frame-toolbar {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 16px 18px;
+  border-bottom: 1px solid rgba(21, 21, 21, 0.08);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.embed-frame-toolbar span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(21, 21, 21, 0.18);
+}
+
+.embed-frame-wrap {
+  position: relative;
+  min-height: 620px;
+  background: #fff;
+}
+
+.embed-frame {
+  display: block;
+  width: 100%;
+  min-height: 620px;
+  height: 620px;
+  border: 0;
+  background: #fff;
+}
+
+@media (max-width: 980px) {
+  .project-card-header {
+    flex-direction: column;
+    align-items: start;
+  }
+}
+
+@media (max-width: 720px) {
+  .project-card {
+    padding: 22px;
+    border-radius: 24px;
+  }
+
+  .embed-frame-shell {
+    border-radius: 22px;
+  }
+
+  .embed-frame-wrap,
+  .embed-frame {
+    min-height: 420px;
+    height: 420px;
+  }
+}
