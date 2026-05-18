@@ -6,6 +6,7 @@ const mockupMeta = document.querySelector("#mockup-meta");
 const cursorDot = document.querySelector(".cursor-dot");
 const cursorRing = document.querySelector(".cursor-ring");
 const interactiveElements = document.querySelectorAll("a, button, .archive-card");
+const revealItems = document.querySelectorAll("[data-reveal]");
 
 projectCards.forEach((card) => {
   const type = card.dataset.type;
@@ -121,3 +122,35 @@ function initCustomCursor() {
 }
 
 initCustomCursor();
+
+function initRevealOnScroll() {
+  if (!revealItems.length) {
+    return;
+  }
+
+  if (!("IntersectionObserver" in window)) {
+    revealItems.forEach((item) => item.classList.add("is-visible"));
+    return;
+  }
+
+  const revealObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          return;
+        }
+
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    },
+    {
+      threshold: 0.14,
+      rootMargin: "0px 0px -8% 0px",
+    }
+  );
+
+  revealItems.forEach((item) => revealObserver.observe(item));
+}
+
+initRevealOnScroll();

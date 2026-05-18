@@ -35,7 +35,7 @@
 
       <main>
         <section class="hero section" id="hero">
-          <div class="hero-copy-block">
+          <div class="hero-copy-block" data-reveal>
             <p class="eyebrow">Portfólio pessoal</p>
             <h1>Interfaces digitais com clareza visual e execução consistente.</h1>
             <p class="hero-copy">
@@ -49,7 +49,7 @@
             </div>
           </div>
 
-          <div class="hero-visual" aria-label="Mockup ilustrativo">
+          <div class="hero-visual" aria-label="Mockup ilustrativo" data-reveal>
             <div class="hero-frame hero-mockup">
               <div class="mockup-stage" id="mockup-stage" aria-live="polite">
                 <div class="mockup-slide active" data-mockup-name="Mouses Ergo">
@@ -95,7 +95,7 @@
 
         <section class="section experience-section" id="experience">
           <div class="section-heading experience-heading">
-            <div class="experience-intro">
+            <div class="experience-intro" data-reveal>
               <p class="eyebrow">Experiência na prática</p>
               <h2>Atuação real em projetos que geram impacto.</h2>
               <p class="section-copy">
@@ -110,7 +110,7 @@
           </div>
 
           <div class="experience-grid">
-            <article class="experience-card">
+            <article class="experience-card" data-reveal>
               <div class="experience-media">
                 <img src="img/kalunga-com.png" alt="Interface e-commerce Kalunga" />
               </div>
@@ -130,7 +130,7 @@
               </div>
             </article>
 
-            <article class="experience-card">
+            <article class="experience-card" data-reveal>
               <div class="experience-media">
                 <img src="img/mouse-com.png" alt="Landing pages produtos Kalunga" />
               </div>
@@ -149,7 +149,7 @@
               </div>
             </article>
 
-            <article class="experience-card">
+            <article class="experience-card" data-reveal>
               <div class="experience-media">
                 <img src="img/sacola-com.png" alt="Testes e validação de interfaces" />
               </div>
@@ -171,7 +171,7 @@
         </section>
 
         <section class="section archive-section" id="project-archive">
-          <div class="section-heading archive-heading">
+          <div class="section-heading archive-heading" data-reveal>
             <div>
               <p class="eyebrow">Todos os projetos</p>
               <h2>Visão geral organizada para navegar por categoria.</h2>
@@ -182,17 +182,15 @@
             </p>
           </div>
 
-          <div class="filter-bar" role="toolbar" aria-label="Filtrar projetos">
+          <div class="filter-bar" role="toolbar" aria-label="Filtrar projetos" data-reveal>
             <button class="filter-chip is-selected" data-filter="all" type="button">Todos</button>
             <button class="filter-chip" data-filter="landing" type="button">Landing Pages</button>
             <button class="filter-chip" data-filter="dashboard" type="button">Dashboards</button>
-            <button class="filter-chip" data-filter="design" type="button">Design</button>
-            <button class="filter-chip" data-filter="experiment" type="button">Experimentos</button>
           </div>
 
           <div class="archive-grid">
             <article
-              class="archive-card project-card"
+              class="archive-card project-card" data-reveal
               data-category="landing"
               data-type="case"
               data-href="projects/nova-commerce.html"
@@ -208,7 +206,7 @@
             </article>
 
             <article
-              class="archive-card project-card"
+              class="archive-card project-card" data-reveal
               data-category="dashboard"
               data-type="collection"
               data-href="projects/dashboards.html"
@@ -216,37 +214,17 @@
               <a class="archive-button" href="projects/dashboards.html" aria-label="Abrir coleção de dashboards">
                 <span class="archive-thumb thumb-violet"></span>
                 <span class="archive-meta">
-                  <span class="archive-type-label">Coleção</span>
-                  <strong>Pulse Dashboard</strong>
-                  <span>Dashboard</span>
+                  <strong>Criativos</strong>
+                  <span>Abrir conteúdos ↗︎</span>
                 </span>
               </a>
             </article>
 
-            <article class="archive-card project-card" data-category="experiment" data-type="simple">
-              <div class="archive-button archive-button-static" aria-label="Projeto visual Atlas Tasks">
-                <span class="archive-thumb thumb-rose"></span>
-                <span class="archive-meta">
-                  <span class="archive-type-label">Visual</span>
-                  <strong>Atlas Tasks</strong>
-                  <span>Experimento</span>
-                </span>
-              </div>
-            </article>
 
-            <article class="archive-card project-card" data-category="design" data-type="simple">
-              <div class="archive-button archive-button-static" aria-label="Projeto visual Studio Brand Kit">
-                <span class="archive-thumb thumb-sand"></span>
-                <span class="archive-meta">
-                  <span class="archive-type-label">Visual</span>
-                  <strong>Studio Brand Kit</strong>
-                  <span>Design</span>
-                </span>
-              </div>
-            </article>
+
 
             <article
-              class="archive-card project-card"
+              class="archive-card project-card" data-reveal
               data-category="landing"
               data-type="case"
               data-href="projects/orbit-launch.html"
@@ -254,38 +232,23 @@
               <a class="archive-button" href="projects/orbit-launch.html" aria-label="Abrir case completo do projeto Orbit Launch">
                 <span class="archive-thumb thumb-night"></span>
                 <span class="archive-meta">
-                  <span class="archive-type-label">Case completo</span>
                   <strong>Orbit Launch</strong>
                   <span>Landing Page</span>
                 </span>
               </a>
             </article>
 
-            <article
-              class="archive-card project-card"
-              data-category="dashboard"
-              data-type="collection"
-              data-href="projects/dashboards.html"
-            >
-              <a class="archive-button" href="projects/dashboards.html" aria-label="Abrir coleção de dashboards">
-                <span class="archive-thumb thumb-mint"></span>
-                <span class="archive-meta">
-                  <span class="archive-type-label">Coleção</span>
-                  <strong>Insight Flow</strong>
-                  <span>Dashboard</span>
-                </span>
-              </a>
-            </article>
+
           </div>
         </section>
 
         <section class="section split-section" id="services">
-          <div class="split-intro">
+          <div class="split-intro" data-reveal>
             <p class="eyebrow">O que eu faço</p>
             <h2>Design, implementação e validação trabalhando como uma frente só.</h2>
           </div>
           <div class="services-list">
-            <article class="service-card">
+            <article class="service-card" data-reveal>
               <h3>Front-end Development</h3>
               <p>
                 Desenvolvimento de interfaces responsivas com HTML, CSS e
@@ -293,7 +256,7 @@
                 visual e boa experiência de navegação.
               </p>
             </article>
-            <article class="service-card">
+            <article class="service-card" data-reveal>
               <h3>UI Design</h3>
               <p>
                 Criação de layouts, sistemas visuais e decisões de hierarquia para
@@ -301,7 +264,7 @@
                 objetivas.
               </p>
             </article>
-            <article class="service-card">
+            <article class="service-card" data-reveal>
               <h3>Testing / QA</h3>
               <p>
                 Revisão de fluxos, estados e comportamento da interface para
@@ -312,7 +275,7 @@
         </section>
 
         <section class="section profile-grid" id="about">
-          <div class="profile-copy">
+          <div class="profile-copy" data-reveal>
             <p class="eyebrow">Sobre</p>
             <h2>Um perfil híbrido para resolver problemas visuais e funcionais.</h2>
             <p class="about-copy">
@@ -325,7 +288,7 @@
               deixem a experiência mais clara para quem navega.
             </p>
           </div>
-          <div class="profile-card">
+          <div class="profile-card" data-reveal>
             <p class="mini-label">Foco de trabalho</p>
             <ul class="profile-points">
               <li>Estruturar interfaces com hierarquia e legibilidade.</li>
@@ -336,13 +299,13 @@
         </section>
 
         <section class="section skills-wrap" id="skills">
-          <div class="section-heading">
+          <div class="section-heading" data-reveal>
             <p class="eyebrow">Skills</p>
             <h2>Ferramentas organizadas por área de atuação.</h2>
           </div>
 
           <div class="skills-groups">
-            <article class="skill-group">
+            <article class="skill-group" data-reveal>
               <h3>Front-end</h3>
               <div class="skills-list">
                 <span>HTML</span>
@@ -352,7 +315,7 @@
               </div>
             </article>
 
-            <article class="skill-group">
+            <article class="skill-group" data-reveal>
               <h3>Design</h3>
               <div class="skills-list">
                 <span>Figma</span>
@@ -361,14 +324,14 @@
               </div>
             </article>
 
-            <article class="skill-group">
+            <article class="skill-group" data-reveal>
               <h3>Motion</h3>
               <div class="skills-list">
                 <span>After Effects</span>
               </div>
             </article>
 
-            <article class="skill-group">
+            <article class="skill-group" data-reveal>
               <h3>Qualidade</h3>
               <div class="skills-list">
                 <span>QA</span>
@@ -378,7 +341,7 @@
           </div>
         </section>
 
-        <section class="section contact-band" id="contact">
+        <section class="section contact-band" id="contact" data-reveal>
           <p class="eyebrow">Contato</p>
           <h2>Disponível para criar, refinar e validar interfaces digitais.</h2>
           <p class="section-copy contact-copy">
