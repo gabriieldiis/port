@@ -496,7 +496,7 @@ h1 {
 
 h2 {
   margin-bottom: 1rem;
-  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-size: 5rem;
 }
 
 h3 {
