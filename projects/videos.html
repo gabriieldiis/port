@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vídeos | Comerciais Kalunga</title>
+    <script>
+      (() => {
+        try {
+          const theme = localStorage.getItem("portfolio-theme") || "dark";
+          document.documentElement.dataset.theme = theme === "light" ? "light" : "dark";
+        } catch {
+          document.documentElement.dataset.theme = "dark";
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="./videos.css" />
+  </head>
+  <body class="video-body">
+    <div class="cursor cursor-dot" aria-hidden="true"></div>
+    <div class="cursor cursor-ring" aria-hidden="true"></div>
+
+    <div class="page-shell">
+      <main class="case-page video-page">
+        <a class="button video-back-button" href="../index.html#project-archive">Voltar</a>
+
+        <section class="section video-hero">
+          <div class="video-hero-copy" data-reveal>
+            <p class="eyebrow">Showreel audiovisual</p>
+            <h1>Comerciais que transformam produto em presença.</h1>
+            <p class="section-copy">
+              Campanhas desenvolvidas para a Kalunga com foco em impacto visual,
+              motion design e performance audiovisual.
+            </p>
+          </div>
+
+          <div class="video-hero-interface" aria-hidden="true" data-reveal>
+            <div class="video-glow"></div>
+            <div class="editor-panel">
+              <div class="editor-preview">
+                <span class="play-mark"></span>
+              </div>
+              <div class="editor-timeline">
+                <span style="--w: 42%"></span>
+                <span style="--w: 68%"></span>
+                <span style="--w: 56%"></span>
+                <span style="--w: 78%"></span>
+              </div>
+              <div class="waveform">
+                <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section broadcast-feature">
+          <div class="broadcast-card" data-reveal>
+            <div>
+              <p class="eyebrow">Exibição em transmissão esportiva</p>
+              <h2>Peças com presença de broadcast para XSports.</h2>
+            </div>
+            <div class="broadcast-copy">
+              <strong>XSports</strong>
+              <p class="section-copy">
+                Comerciais pensados para impacto rápido, leitura em tela grande e
+                ritmo visual compatível com intervalos e inserções esportivas.
+              </p>
+            </div>
+            <div class="broadcast-hud" aria-hidden="true">
+              <span>ON AIR</span>
+              <span>16:9</span>
+              <span>MOTION</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="section video-collection">
+          <div class="section-heading video-heading" data-reveal>
+            <div>
+              <p class="eyebrow">Comerciais selecionados</p>
+              <h2>Uma coleção de VTs, campanhas e motion pieces.</h2>
+            </div>
+            <p class="video-counter">06 vídeos</p>
+          </div>
+
+          <div class="video-grid">
+            <button
+              class="video-card video-card-large"
+              type="button"
+              data-reveal
+              data-title="Kalunga na XSports"
+              data-category="Inserção TV"
+              data-client="Kalunga"
+              data-goal="Criar presença de marca em transmissão esportiva."
+              data-campaign="Broadcast / Comercial"
+              data-year="2026"
+              data-tools="After Effects, Premiere, Photoshop"
+              data-video-src="../assets/videos/kalunga-xsports.mp4"
+            >
+              <span class="video-thumb thumb-broadcast">
+                <span class="video-play"></span>
+              </span>
+              <span class="video-card-copy">
+                <span class="video-category">Inserção TV</span>
+                <strong>Kalunga na XSports</strong>
+                <span>Comercial com leitura rápida, presença de marca e energia esportiva.</span>
+              </span>
+            </button>
+
+            <button
+              class="video-card"
+              type="button"
+              data-reveal
+              data-title="Oferta Relâmpago"
+              data-category="VT Comercial"
+              data-client="Kalunga"
+              data-goal="Destacar campanha promocional com alto contraste e ritmo."
+              data-campaign="Campanha Promocional"
+              data-year="2026"
+              data-tools="Premiere, After Effects"
+              data-video-src="../assets/videos/oferta-relampago.mp4"
+            >
+              <span class="video-thumb thumb-orange-film">
+                <span class="video-play"></span>
+              </span>
+              <span class="video-card-copy">
+                <span class="video-category">VT Comercial</span>
+                <strong>Oferta Relâmpago</strong>
+                <span>Peça promocional com ritmo direto e tipografia de impacto.</span>
+              </span>
+            </button>
+
+            <button
+              class="video-card"
+              type="button"
+              data-reveal
+              data-title="Semana Tech"
+              data-category="Motion Design"
+              data-client="Kalunga"
+              data-goal="Apresentar produtos de tecnologia com visual premium."
+              data-campaign="Motion Design"
+              data-year="2026"
+              data-tools="After Effects, Illustrator"
+              data-video-src="../assets/videos/semana-tech.mp4"
+            >
+              <span class="video-thumb thumb-violet-film">
+                <span class="video-play"></span>
+              </span>
+              <span class="video-card-copy">
+                <span class="video-category">Motion Design</span>
+                <strong>Semana Tech</strong>
+                <span>Motion piece com recortes de produto, brilho e transições limpas.</span>
+              </span>
+            </button>
+
+            <button
+              class="video-card video-card-wide"
+              type="button"
+              data-reveal
+              data-title="Volta às Aulas"
+              data-category="Campanha Promocional"
+              data-client="Kalunga"
+              data-goal="Transformar linha sazonal em narrativa audiovisual."
+              data-campaign="Sazonal / Promocional"
+              data-year="2026"
+              data-tools="Premiere, After Effects, Photoshop"
+              data-video-src="../assets/videos/volta-as-aulas.mp4"
+            >
+              <span class="video-thumb thumb-school-film">
+                <span class="video-play"></span>
+              </span>
+              <span class="video-card-copy">
+                <span class="video-category">Campanha Promocional</span>
+                <strong>Volta às Aulas</strong>
+                <span>VT sazonal com foco em oferta, produto e cadência visual.</span>
+              </span>
+            </button>
+
+            <button
+              class="video-card"
+              type="button"
+              data-reveal
+              data-title="Marca Própria"
+              data-category="Campanha Produto"
+              data-client="Kalunga"
+              data-goal="Valorizar produtos de marca própria em linguagem publicitária."
+              data-campaign="Produto / Awareness"
+              data-year="2026"
+              data-tools="Premiere, Photoshop"
+              data-video-src="../assets/videos/marca-propria.mp4"
+            >
+              <span class="video-thumb thumb-product-film">
+                <span class="video-play"></span>
+              </span>
+              <span class="video-card-copy">
+                <span class="video-category">Campanha Produto</span>
+                <strong>Marca Própria</strong>
+                <span>Comercial de produto com composição controlada e foco em presença.</span>
+              </span>
+            </button>
+
+            <button
+              class="video-card"
+              type="button"
+              data-reveal
+              data-title="Criativos Sociais"
+              data-category="Social Video"
+              data-client="Kalunga"
+              data-goal="Adaptar linguagem comercial para formatos digitais curtos."
+              data-campaign="Social / Performance"
+              data-year="2026"
+              data-tools="After Effects, Premiere"
+              data-video-src="../assets/videos/criativos-sociais.mp4"
+            >
+              <span class="video-thumb thumb-social-film">
+                <span class="video-play"></span>
+              </span>
+              <span class="video-card-copy">
+                <span class="video-category">Social Video</span>
+                <strong>Criativos Sociais</strong>
+                <span>Peças curtas para mídia digital com cortes ágeis e assinatura visual.</span>
+              </span>
+            </button>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <dialog class="video-dialog" id="video-dialog">
+      <div class="video-dialog-inner">
+        <button class="video-dialog-close" id="video-dialog-close" type="button" aria-label="Fechar vídeo">
+          Fechar
+        </button>
+        <div class="video-player-shell">
+          <video id="video-player" controls playsinline preload="metadata"></video>
+          <div class="video-empty-state" id="video-empty-state">
+            <span class="video-play"></span>
+            <p>Substitua o caminho do vídeo pelo arquivo final em <strong>assets/videos</strong>.</p>
+          </div>
+        </div>
+        <aside class="video-project-info">
+          <p class="eyebrow" id="modal-category"></p>
+          <h2 id="modal-title"></h2>
+          <dl>
+            <div>
+              <dt>Cliente</dt>
+              <dd id="modal-client"></dd>
+            </div>
+            <div>
+              <dt>Objetivo</dt>
+              <dd id="modal-goal"></dd>
+            </div>
+            <div>
+              <dt>Tipo de campanha</dt>
+              <dd id="modal-campaign"></dd>
+            </div>
+            <div>
+              <dt>Ano</dt>
+              <dd id="modal-year"></dd>
+            </div>
+            <div>
+              <dt>Ferramentas</dt>
+              <dd id="modal-tools"></dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
+    </dialog>
+
+    <script src="../script.js"></script>
+    <script src="./videos.js"></script>
+  </body>
+</html>

@@ -14,7 +14,18 @@
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap"
       rel="stylesheet"
     />
+    <script>
+      (() => {
+        try {
+          const theme = localStorage.getItem("portfolio-theme") || "dark";
+          document.documentElement.dataset.theme = theme === "light" ? "light" : "dark";
+        } catch {
+          document.documentElement.dataset.theme = "dark";
+        }
+      })();
+    </script>
     <link rel="stylesheet" href="styles.css" />
+    
   </head>
   <body>
     <div class="cursor cursor-dot" aria-hidden="true"></div>
@@ -23,14 +34,35 @@
     <div class="page-shell">
       <header class="topbar">
         <a class="brand" href="#hero">Gabriel</a>
-        <nav class="nav">
-          <a href="#experience">Experiência</a>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Abrir menu"
+          aria-controls="site-nav"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="nav" id="site-nav" aria-label="Navegacao principal">
+          <a href="#experience">Experi&ecirc;ncia</a>
           <a href="#project-archive">Todos</a>
-          <a href="#services">Serviços</a>
+          <a href="#services">Servi&ccedil;os</a>
           <a href="#about">Sobre</a>
           <a href="#contact">Contato</a>
         </nav>
-        <p class="location">Front-end + Design + QA</p>
+
+        <button class="theme-toggle" type="button" aria-label="Alternar para tema claro" aria-pressed="false">
+          <span class="theme-toggle-track" aria-hidden="true">
+            <span class="theme-toggle-thumb">
+              <span class="theme-icon theme-icon-moon">&#9790;</span>
+              <span class="theme-icon theme-icon-sun">&#9728;</span>
+            </span>
+          </span>
+          <span class="theme-toggle-text">Dark</span>
+        </button>
       </header>
 
       <main>
@@ -176,16 +208,13 @@
               <p class="eyebrow">Todos os projetos</p>
               <h2>Visão geral organizada para navegar por categoria.</h2>
             </div>
-            <p class="section-copy">
-              Cards simples, grid responsivo e filtro por categoria para deixar a
-              exploração mais direta.
-            </p>
           </div>
 
           <div class="filter-bar" role="toolbar" aria-label="Filtrar projetos" data-reveal>
             <button class="filter-chip is-selected" data-filter="all" type="button">Todos</button>
             <button class="filter-chip" data-filter="landing" type="button">Landing Pages</button>
             <button class="filter-chip" data-filter="dashboard" type="button">Dashboards</button>
+            <button class="filter-chip" data-filter="video" type="button">V&iacute;deos</button>
           </div>
 
           <div class="archive-grid">
@@ -196,7 +225,8 @@
               data-href="projects/nova-commerce.html"
             >
               <a class="archive-button" href="projects/conteudos-ilustrativos.html" aria-label="Abrir case completo do projeto Conteúdos ilustrativos">
-                <span class="archive-thumb thumb-orange"></span>
+                <!-- <span class="archive-thumb thumb-orange"></span> -->
+                 <img src="img/img-conteudos.png" alt="">
                 <span class="archive-meta">
                   <!-- <span class="archive-type-label">Case completo</span> -->
                   <strong>Conteúdos ilustrativos</strong>
@@ -212,7 +242,7 @@
               data-href="projects/dashboards.html"
             >
               <a class="archive-button" href="projects/dashboards.html" aria-label="Abrir coleção de dashboards">
-                <span class="archive-thumb thumb-violet"></span>
+              <img src="img/img-artes.png" alt="">
                 <span class="archive-meta">
                   <strong>Criativos</strong>
                   <span>Abrir conteúdos ↗︎</span>
@@ -225,15 +255,15 @@
 
             <article
               class="archive-card project-card" data-reveal
-              data-category="landing"
+              data-category="video"
               data-type="case"
-              data-href="projects/orbit-launch.html"
+              data-href="projects/videos.html"
             >
-              <a class="archive-button" href="projects/orbit-launch.html" aria-label="Abrir case completo do projeto Orbit Launch">
+              <a class="archive-button" href="projects/videos.html" aria-label="Abrir colecao de videos comerciais">
                 <span class="archive-thumb thumb-night"></span>
                 <span class="archive-meta">
-                  <strong>Orbit Launch</strong>
-                  <span>Landing Page</span>
+                  <strong>V&iacute;deos</strong>
+                    <span>Abrir conteúdos ↗︎</span>
                 </span>
               </a>
             </article>
@@ -278,7 +308,7 @@
           <div class="profile-copy" data-reveal>
             <p class="eyebrow">Sobre</p>
             <h2>Um perfil híbrido para resolver problemas visuais e funcionais.</h2>
-            <p class="about-copy">
+            <!-- <p class="about-copy">
               Meu diferencial está na combinação entre design, código e validação.
               Isso me permite pensar a interface não só pela aparência, mas também
               pela forma como ela é construída, testada e percebida no uso real.
@@ -286,7 +316,7 @@
             <p class="about-copy">
               Busco soluções que reduzam ruído, organizem melhor o conteúdo e
               deixem a experiência mais clara para quem navega.
-            </p>
+            </p> -->
           </div>
           <div class="profile-card" data-reveal>
             <p class="mini-label">Foco de trabalho</p>
@@ -349,9 +379,10 @@
             mais clareza visual, boa execução front-end e atenção à qualidade.
           </p>
           <div class="contact-links">
-            <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
-            <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
-            <a href="mailto:gabriel@email.com">gabriel@email.com</a>
+            <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub ↗︎</a>
+            <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn ↗︎</a>
+            <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">Behance ↗︎</a>
+            <a href="mailto:gabriel@email.com">gabriel@email.com ↗︎</a>
           </div>
         </section>
       </main>

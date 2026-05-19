@@ -7,6 +7,62 @@ const cursorDot = document.querySelector(".cursor-dot");
 const cursorRing = document.querySelector(".cursor-ring");
 const interactiveElements = document.querySelectorAll("a, button, .archive-card");
 const revealItems = document.querySelectorAll("[data-reveal]");
+const topbar = document.querySelector(".topbar");
+const themeToggle = document.querySelector(".theme-toggle");
+const themeToggleText = document.querySelector(".theme-toggle-text");
+const menuToggle = document.querySelector(".menu-toggle");
+const nav = document.querySelector(".nav");
+const navLinks = document.querySelectorAll(".nav a[href^='#']");
+const sections = [...navLinks]
+  .map((link) => document.querySelector(link.getAttribute("href")))
+  .filter(Boolean);
+
+const THEME_STORAGE_KEY = "portfolio-theme";
+
+function applyTheme(theme) {
+  const nextTheme = theme === "light" ? "light" : "dark";
+  document.documentElement.dataset.theme = nextTheme;
+
+  if (themeToggle) {
+    const isLight = nextTheme === "light";
+    themeToggle.setAttribute("aria-pressed", String(isLight));
+    themeToggle.setAttribute(
+      "aria-label",
+      isLight ? "Alternar para tema escuro" : "Alternar para tema claro"
+    );
+  }
+
+  if (themeToggleText) {
+    themeToggleText.textContent = nextTheme === "light" ? "Light" : "Dark";
+  }
+}
+
+function initTheme() {
+  let savedTheme = "dark";
+
+  try {
+    savedTheme = window.localStorage.getItem(THEME_STORAGE_KEY) || "dark";
+  } catch {
+    savedTheme = "dark";
+  }
+
+  applyTheme(savedTheme || "dark");
+
+  themeToggle?.addEventListener("click", () => {
+    const currentTheme = document.documentElement.dataset.theme === "light" ? "light" : "dark";
+    const nextTheme = currentTheme === "light" ? "dark" : "light";
+
+    try {
+      window.localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
+    } catch {
+      // Tema ainda alterna em tempo real mesmo se a persistência estiver indisponível.
+    }
+
+    applyTheme(nextTheme);
+  });
+}
+
+initTheme();
 
 projectCards.forEach((card) => {
   const type = card.dataset.type;
@@ -154,3 +210,77 @@ function initRevealOnScroll() {
 }
 
 initRevealOnScroll();
+
+function closeMobileNav() {
+  if (!topbar || !menuToggle) {
+    return;
+  }
+
+  topbar.classList.remove("is-open");
+  document.body.classList.remove("nav-open");
+  menuToggle.setAttribute("aria-expanded", "false");
+  menuToggle.setAttribute("aria-label", "Abrir menu");
+}
+
+function initPremiumHeader() {
+  if (!topbar) {
+    return;
+  }
+
+  function updateHeaderState() {
+    topbar.classList.toggle("is-scrolled", window.scrollY > 18);
+  }
+
+  updateHeaderState();
+  window.addEventListener("scroll", updateHeaderState, { passive: true });
+
+  menuToggle?.addEventListener("click", () => {
+    const isOpen = topbar.classList.toggle("is-open");
+    document.body.classList.toggle("nav-open", isOpen);
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+    menuToggle.setAttribute("aria-label", isOpen ? "Fechar menu" : "Abrir menu");
+  });
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", closeMobileNav);
+  });
+
+  window.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeMobileNav();
+    }
+  });
+}
+
+function initActiveNavigation() {
+  if (!sections.length || !navLinks.length || !("IntersectionObserver" in window)) {
+    return;
+  }
+
+  const sectionObserver = new IntersectionObserver(
+    (entries) => {
+      const visibleEntry = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+      if (!visibleEntry) {
+        return;
+      }
+
+      const activeId = `#${visibleEntry.target.id}`;
+
+      navLinks.forEach((link) => {
+        link.classList.toggle("is-active", link.getAttribute("href") === activeId);
+      });
+    },
+    {
+      threshold: [0.18, 0.32, 0.5],
+      rootMargin: "-18% 0px -58% 0px",
+    }
+  );
+
+  sections.forEach((section) => sectionObserver.observe(section));
+}
+
+initPremiumHeader();
+initActiveNavigation();
